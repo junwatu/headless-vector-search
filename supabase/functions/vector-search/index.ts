@@ -118,7 +118,7 @@ serve(async (req) => {
 
     const completionOptions: CreateCompletionRequest = {
       model: "gpt-3.5-turbo",
-      prompt,
+      messages: [{ role: "user", content: prompt }],
       max_tokens: 1024,
       temperature: 0,
       stream: true,
