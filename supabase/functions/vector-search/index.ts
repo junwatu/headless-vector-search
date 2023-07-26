@@ -117,7 +117,7 @@ serve(async (req) => {
     `;
 
     const completionOptions: CreateCompletionRequest = {
-      model: "text-davinci-003",
+      model: "gpt-3.5-turbo",
       prompt,
       max_tokens: 1024,
       temperature: 0,
@@ -125,7 +125,7 @@ serve(async (req) => {
     };
 
     // The Fetch API allows for easier response streaming over the OpenAI client.
-    const response = await fetch("https://api.openai.com/v1/completions", {
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
       headers: {
         Authorization: `Bearer ${OPENAI_KEY}`,
         "Content-Type": "application/json",
